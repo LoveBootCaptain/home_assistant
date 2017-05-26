@@ -10,33 +10,7 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
-  customize:
-    # Add an entry for each entity that you want to overwrite.
-    sensor.yr_temperature:
-      friendly_name: Temperatur
-    sensor.yr_symbol:
-      friendly_name: Icon
-    light.hgrp0000002046:
-      friendly_name: Wohnung
-      icon: mdi:home-variant
-    remote.harmony_tv:
-      icon: mdi:television
-    light.regenbogen:
-      icon: mdi:lamp
-    light.flur_hinten:
-      icon: mdi:lightbulb-outline
-    light.flur_vorne:
-      icon: mdi:lightbulb-outline
-    light.deckenlampe:
-      icon: mdi:ceiling-light
-    light.kinderlampe:
-      icon: mdi:ceiling-light
-    light.stern:
-      icon: mdi:lightbulb-outline
-    light.schlafzimmerlampe:
-      icon: mdi:ceiling-light
-    light.schalter:
-      icon: mdi:power-plug
+  customize: !include customize.yaml
       
 # Show links to resources in log and frontend
 # introduction:
@@ -116,6 +90,20 @@ zone:
   latitude: !secret lat
   longitude: !secret lon
   radius: 50
+  icon: mdi:home-map-marker
+
+zone 2:
+  name: Work Stephan
+  latitude: !secret zone_2_lat
+  longitude: !secret zone_2_lon
+  radius: 100
+  icon: mdi:home-map-marker
+
+zone 3:
+  name: Work Mona
+  latitude: !secret zone_3_lat
+  longitude: !secret zone_3_lon
+  radius: 100
   icon: mdi:home-map-marker
 
 mqtt:

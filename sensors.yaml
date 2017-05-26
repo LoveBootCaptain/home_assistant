@@ -26,3 +26,41 @@
       - mediumClouds
       - highClouds
       - dewpointTemperature
+
+- platform: google_travel_time
+  name: zu Monas Arbeit
+  api_key: !secret google_api_key
+  origin: zone.home
+  destination: zone.work_mona
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: Mona nach Hause
+  api_key: !secret google_api_key
+  origin: zone.work_mona
+  destination: zone.home
+  options:
+    mode: driving
+
+- platform: google_travel_time
+  name: zu Stephans Arbeit
+  api_key: !secret google_api_key
+  origin: zone.home
+  destination: zone.work_stephan
+  options:
+    mode: transit
+
+- platform: google_travel_time
+  name: Stephan nach Hause
+  api_key: !secret google_api_key
+  origin: zone.work_stephan
+  destination: zone.home
+  options:
+    mode: transit
+
+- platform: mqtt
+  state_topic: "owntracks/phone/phone"
+  name: "Stephans Phone Battery"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'

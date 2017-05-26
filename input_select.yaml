@@ -3,7 +3,7 @@
 #################################################################
 
 harmony_tv:
-  name: Harmony Hub
+  name: Harmony TV
   options:
     - Fernsehen
     - Streaming

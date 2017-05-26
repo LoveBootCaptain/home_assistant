@@ -1,13 +1,3 @@
-
-nexus5x_stephan:
-  hide_if_away: false
-  mac: !secret stephan_mac
-  name: Stephan
-  gravatar: !secret stephan_mail
-  picture:
-  track: true
-  vendor: LG Electronics (Mobile Communications)
-  
 iphone5_mona:
   hide_if_away: false
   mac:  !secret mona_mac
@@ -19,8 +9,8 @@ iphone5_mona:
 phone_phone:
   hide_if_away: false
   mac: !secret stephan_mac
-  name: Nexus 5X
+  name: Stephan
   gravatar: !secret stephan_mail
   picture:
   track: true
-  vendor: Google
+  vendor:
