@@ -28,7 +28,7 @@
       - dewpointTemperature
 
 - platform: google_travel_time
-  name: zu Monas Arbeit
+  name: Mona zur Arbeit
   api_key: !secret google_api_key
   origin: zone.home
   destination: zone.work_mona
@@ -44,7 +44,7 @@
     mode: driving
 
 - platform: google_travel_time
-  name: zu Stephans Arbeit
+  name: Stephan zur Arbeit
   api_key: !secret google_api_key
   origin: zone.home
   destination: zone.work_stephan

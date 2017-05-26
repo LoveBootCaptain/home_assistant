@@ -139,14 +139,13 @@ stephan:
   name: Stephan
   entities:
   - device_tracker.phone_phone
-  - device_tracker.nexus5x_stephan
   - sensor.stephans_phone_battery
-  - sensor.zu_stephans_arbeit
+  - sensor.stephan_zur_arbeit
   - sensor.stephan_nach_hause
 
 mona:
   name: Mona
   entities:
   - device_tracker.iphone5_mona
-  - sensor.zu_monas_arbeit
+  - sensor.mona_zur_arbeit
   - sensor.mona_nach_hause

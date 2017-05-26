@@ -40,13 +40,13 @@
       sensor.stephans_phone_battery:
         icon: mdi:battery-charging
 
-      sensor.zu_stephans_arbeit:
+      sensor.stephan_zur_arbeit:
         icon: mdi:subway
 
       sensor.stephan_nach_hause:
         icon: mdi:subway
 
-      sensor.zu_monas_arbeit:
+      sensor.mona_zur_arbeit:
         icon: mdi:car
 
       sensor.mona_nach_hause:
