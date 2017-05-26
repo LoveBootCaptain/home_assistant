@@ -1,0 +1,28 @@
+- platform: template
+  sensors:
+    harmony_hub:
+      value_template: '{{ states.remote.harmony_tv.attributes.current_activity }}'
+      friendly_name: 'Harmony Hub'
+
+- platform: systemmonitor
+  resources:
+    - type: memory_free
+    - type: memory_use_percent
+    - type: processor_use
+    - type: since_last_boot
+    
+- platform: yr
+  monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - mediumClouds
+      - highClouds
+      - dewpointTemperature

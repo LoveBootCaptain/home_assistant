@@ -1,0 +1,134 @@
+- alias: "Fernsehen started from Harmony Hub"
+  trigger:
+    platform: state
+    entity_id: remote.harmony_tv
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Fernsehen" }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.harmony_tv
+    data:
+      option: "Fernsehen"
+  
+- alias: "Streaming started from Harmony Hub"
+  trigger:
+    platform: state
+    entity_id: remote.harmony_tv
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Streaming" }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.harmony_tv
+    data:
+      option: "Streaming"
+      
+- alias: "Switch started from Harmony Hub"
+  trigger:
+    platform: state
+    entity_id: remote.harmony_tv
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Switch" }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.harmony_tv
+    data:
+      option: "Switch"
+      
+- alias: "Xbox 360 started from Harmony Hub"
+  trigger:
+    platform: state
+    entity_id: remote.harmony_tv
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Xbox 360" }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.harmony_tv
+    data:
+      option: "Xbox 360"
+
+- alias: "Nintendo Pi started from Harmony Hub"
+  trigger:
+    platform: state
+    entity_id: remote.harmony_tv
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Nintendo Pi" }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.harmony_tv
+    data:
+      option: "Nintendo Pi"
+
+- alias: "Powered off from Harmony Hub"
+  trigger:
+    platform: state
+    entity_id: remote.harmony_tv
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "PowerOff" }}'
+  action:
+    service: input_select.select_option
+    entity_id: input_select.harmony_tv
+    data:
+      option: "Powered Off"
+      
+#####
+
+
+- alias: "Fernsehen started from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.harmony_tv
+    to: 'Fernsehen'
+  action:
+    service: script.turn_on
+    entity_id: script.fernsehen
+
+- alias: "Streaming started from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.harmony_tv
+    to: 'Streaming'
+  action:
+    service: script.turn_on
+    entity_id: script.streaming
+    
+- alias: "Switch started from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.harmony_tv
+    to: 'Switch'
+  action:
+    service: script.turn_on
+    entity_id: script.switch
+    
+- alias: "Xbox 360 started from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.harmony_tv
+    to: 'Xbox 360'
+  action:
+    service: script.turn_on
+    entity_id: script.xbox360
+
+- alias: "Nintendo Pi started from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.harmony_tv
+    to: 'Nintendo Pi'
+  action:
+    service: script.turn_on
+    entity_id: script.nintendo
+
+- alias: "TV turned off from HASS"
+  trigger:
+    platform: state
+    entity_id: input_select.harmony_tv
+    to: 'Powered Off'
+  action:
+    service: script.turn_on
+    entity_id: script.tvoff

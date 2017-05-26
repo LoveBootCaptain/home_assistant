@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+/.uuid
+/plex.conf
+/phue.conf
+/.HA_VERSION
+/secrets.yaml

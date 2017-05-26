@@ -1,0 +1,43 @@
+#################################################################
+## Scripts
+#################################################################
+
+fernsehen:
+  sequence:
+  - service: remote.turn_on
+    entity_id: remote.harmony_tv
+    data:
+      activity: "25091685"
+
+streaming:
+  sequence:
+  - service: remote.turn_on
+    entity_id: remote.harmony_tv
+    data:
+      activity: "25091413"
+      
+switch:
+  sequence:
+  - service: remote.turn_on
+    entity_id: remote.harmony_tv
+    data:
+      activity: "25383022"
+      
+xbox360:
+  sequence:
+  - service: remote.turn_on
+    entity_id: remote.harmony_tv
+    data:
+      activity: "25091497"
+      
+nintendo:
+  sequence:
+  - service: remote.turn_on
+    entity_id: remote.harmony_tv
+    data:
+      activity: "26295009"
+
+tvoff:
+  sequence:
+  - service: remote.turn_off
+    entity_id: remote.harmony_tv

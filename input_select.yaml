@@ -1,0 +1,16 @@
+#################################################################
+## Input Select
+#################################################################
+
+harmony_tv:
+  name: Harmony Hub
+  options:
+    - Fernsehen
+    - Streaming
+    - Switch
+    - Xbox 360
+    - Nintendo Pi
+    - Powered Off
+  initial: Powered Off
+  icon: mdi:remote
+

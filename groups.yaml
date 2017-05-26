@@ -1,0 +1,129 @@
+### Tabs
+
+wohnzimmer_view:
+  view: true
+  name: Wohnzimmer
+  entities:
+  - group.wohnzimmer_lights
+  - group.remote
+
+flur_view:
+  view: true
+  name: Flur
+  entities:
+  - group.flur_lights
+
+kinderzimmer_view:
+  view: true
+  name: Kinderzimmer
+  entities:
+  - group.kinderzimmer_lights
+
+schlafzimmer_view:
+  view: true
+  name: Schlafzimmer
+  entities:
+  - group.schlafzimmer_lights
+
+lichter_view:
+  view: true
+  name: Lichter
+  entities:
+  - group.wohnung_lights
+  - group.wohnzimmer_lights
+  - group.flur_lights
+  - group.kinderzimmer_lights
+  - group.schlafzimmer_lights
+
+media_view:
+  name: Remote
+  view: true
+  # icon: mdi:remote
+  entities:
+  - group.remote
+  - group.cast
+
+rasppi_view:
+  name: Raspberry
+  view: true
+  entities:
+  - group.rasppi
+
+weather_view:
+  view: true
+  name: Wetter
+  entities:
+  - group.weather
+
+### Cards
+
+wohnung_lights:
+  name: Wohnung
+  entities:
+  - light.hgrp0000002046
+  
+wohnzimmer_lights:
+  name: Wohnzimmerlicht
+  entities:
+  - light.deckenlampe
+  - light.schreibtisch
+  - light.stern
+  - light.stehlampe
+
+flur_lights:
+  name: Flurlicht
+  entities:
+  - light.flur_hinten
+  - light.flur_vorne
+
+kinderzimmer_lights:
+  name: Kinderzimmerlicht
+  entities:
+  - light.kinderlampe
+  - light.regenbogen
+
+schlafzimmer_lights:
+  name: Schlafzimmerlicht
+  entities:
+  - light.schlafzimmerlampe
+  - light.schalter
+
+remote:
+  name: Wohnzimmer TV
+  entities:
+  - remote.harmony_tv
+  - sensor.harmony_hub
+  - input_select.harmony_tv
+  
+cast:
+  name: Cast
+  entities:  
+  - media_player.kodi
+  - media_player.shieldtv
+  - media_player.shield
+
+rasppi:
+  name: Raspberry
+  entities:
+  - sensor.cpu_use
+  - sensor.ram_free
+  - sensor.ram_use
+  - sensor.since_last_boot
+  
+weather:
+  name: Wetter
+  entities:
+  - sun.sun
+  - sensor.yr_temperature
+  - sensor.yr_symbol
+  - sensor.yr_wind_speed
+  - sensor.yr_pressure
+  - sensor.yr_wind_direction
+  - sensor.yr_humidity
+  - sensor.yr_fog
+  - sensor.yr_cloudiness
+  - sensor.yr_low_clouds
+  - sensor.yr_medium_clouds
+  - sensor.yr_high_clouds
+  - sensor.yr_dewpoint_temperature
+  - sensor.yr_precipitation

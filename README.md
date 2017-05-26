@@ -1,2 +1,2 @@
-# home_assistant
-My Home Assistant Configuration
+# home_assistant_config
+My configuration for Home Assistant

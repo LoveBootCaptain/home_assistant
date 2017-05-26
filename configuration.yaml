@@ -1,0 +1,134 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret lat
+  longitude: !secret lon
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret ele
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Berlin
+  customize:
+    # Add an entry for each entity that you want to overwrite.
+    sensor.yr_temperature:
+      friendly_name: Temperatur
+    sensor.yr_symbol:
+      friendly_name: Icon
+    light.hgrp0000002046:
+      friendly_name: Wohnung
+      icon: mdi:home-variant
+    remote.harmony_tv:
+      icon: mdi:television
+    light.regenbogen:
+      icon: mdi:lamp
+    light.flur_hinten:
+      icon: mdi:lightbulb-outline
+    light.flur_vorne:
+      icon: mdi:lightbulb-outline
+    light.deckenlampe:
+      icon: mdi:ceiling-light
+    light.kinderlampe:
+      icon: mdi:ceiling-light
+    light.stern:
+      icon: mdi:lightbulb-outline
+    light.schlafzimmerlampe:
+      icon: mdi:ceiling-light
+    light.schalter:
+      icon: mdi:power-plug
+      
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  # api_password: PASSWORD
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+# conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# lights
+light:
+  platform: hue
+  host: !secret hue_host
+  allow_unreachable: true
+
+# Text to speech
+tts:
+  platform: google
+
+media_player:
+  - platform: plex
+    name: Plex
+  - platform: kodi
+    name: Kodi
+    host: !secret xbmc_host
+    port: !secret xbmc_port
+    username: !secret xbmc_user
+    password: !secret xbmc_password
+    turn_off_action: quit
+
+remote:
+  - platform: harmony
+    name: Harmony TV
+    host: !secret harmony_host
+    port: !secret harmony_port
+    activity: Streaming
+    
+device_tracker:
+  - platform: nmap_tracker
+    home_interval: 10
+    hosts:
+    - !secret stephan_ip
+    - !secret mona_ip
+  - platform: owntracks
+  
+zone:
+  name: Home
+  latitude: !secret lat
+  longitude: !secret lon
+  radius: 50
+  icon: mdi:home-map-marker
+
+mqtt:
+  broker: m20.cloudmqtt.com
+  port: 16092
+  client_id: home-assistant-1
+  keepalive: 60
+  username: ha
+  password: ha
+
+group: !include groups.yaml
+input_select: !include input_select.yaml
+script: !include scripts.yaml
+automation: !include automation.yaml
+sensor: !include sensors.yaml
+
