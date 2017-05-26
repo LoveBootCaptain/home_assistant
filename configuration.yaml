@@ -119,12 +119,12 @@ zone:
   icon: mdi:home-map-marker
 
 mqtt:
-  broker: m20.cloudmqtt.com
-  port: 16092
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
   client_id: home-assistant-1
   keepalive: 60
-  username: ha
-  password: ha
+  username: !secret mqtt_user
+  password: !secret mqtt_password
 
 group: !include groups.yaml
 input_select: !include input_select.yaml
