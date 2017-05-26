@@ -5,12 +5,24 @@
 harmony_tv:
   name: Harmony TV
   options:
+    - Select Input
     - Fernsehen
     - Streaming
     - Switch
     - Xbox 360
     - Nintendo Pi
     - Powered Off
-  initial: Powered Off
+  initial: Select Input
   icon: mdi:remote
 
+hdmi_input:
+  name: HDMI Input
+  options:
+    - Select Input
+    - TV
+    - HDMI 1
+    - HDMI 2
+    - HDMI 3
+    - HDMI 4
+  initial: Select Input
+  icon: mdi:monitor-multiple

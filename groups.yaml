@@ -101,13 +101,14 @@ remote:
   - remote.harmony_tv
   - sensor.harmony_hub
   - input_select.harmony_tv
+  - input_select.hdmi_input
+  - script.mute
+  - input_slider.harmonyvolume
   
 cast:
   name: Cast
   entities:  
-  - media_player.kodi
-  - media_player.shieldtv
-  - media_player.shield
+  - media_player.cast_remote
 
 rasppi:
   name: Raspberry

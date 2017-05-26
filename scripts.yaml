@@ -41,3 +41,48 @@ tvoff:
   sequence:
   - service: remote.turn_off
     entity_id: remote.harmony_tv
+
+mute:
+  alias: Lautlos
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.harmony_tv
+    data:
+      device: "44929778"
+      command: "Mute"
+
+hdmi1:
+  alias: HDMI 1
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.harmony_tv
+    data:
+      device: "44929778"
+      command: "InputHdmi1"
+
+hdmi2:
+  alias: HDMI 2
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.harmony_tv
+    data:
+      device: "44929778"
+      command: "InputHdmi2"
+
+hdmi3:
+  alias: HDMI 3
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.harmony_tv
+    data:
+      device: "44929778"
+      command: "InputHdmi3"
+
+hdmi4:
+  alias: HDMI 4
+  sequence:
+  - service: remote.send_command
+    entity_id: remote.harmony_tv
+    data:
+      device: "44929778"
+      command: "InputHdmi4"

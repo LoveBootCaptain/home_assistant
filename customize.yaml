@@ -51,3 +51,6 @@
 
       sensor.mona_nach_hause:
         icon: mdi:car
+
+      script.mute:
+        icon: mdi:volume-off

@@ -64,12 +64,22 @@ media_player:
     name: Plex
   - platform: kodi
     name: Kodi
-    host: !secret xbmc_host
-    port: !secret xbmc_port
-    username: !secret xbmc_user
-    password: !secret xbmc_password
+    host: !secret kodi_host
+    port: !secret kodi_port
     turn_off_action: quit
-
+  - platform: cast
+    name: ShieldTV
+    host: 192.168.178.67
+  - platform: cast
+    name: Ambilight TV
+    host: 192.168.178.27
+  - platform: universal
+    name: Cast Remote
+    children:
+      - media_player.kodi
+      - media_player.shieldtv
+      - media_player.ambilight_tv
+      - media_player.shield
 remote:
   - platform: harmony
     name: Harmony TV
@@ -114,9 +124,19 @@ mqtt:
   username: !secret mqtt_user
   password: !secret mqtt_password
 
+input_slider:
+  harmonyvolume:
+    icon: mdi:volume-high
+    name: Volume
+    initial: 12
+    min: 1
+    max: 30
+    step: 1
+
 group: !include groups.yaml
 input_select: !include input_select.yaml
 script: !include scripts.yaml
 automation: !include automation.yaml
 sensor: !include sensors.yaml
+
 

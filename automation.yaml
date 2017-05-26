@@ -132,3 +132,48 @@
   action:
     service: script.turn_on
     entity_id: script.tvoff
+
+- alias: "TV"
+  trigger:
+    platform: state
+    entity_id: input_select.hdmi_input
+    to: 'TV'
+  action:
+    service: script.turn_on
+    entity_id: script.fernsehen
+
+- alias: "HDMI 1"
+  trigger:
+    platform: state
+    entity_id: input_select.hdmi_input
+    to: 'HDMI 1'
+  action:
+    service: script.turn_on
+    entity_id: script.hdmi1
+
+- alias: "HDMI 2"
+  trigger:
+    platform: state
+    entity_id: input_select.hdmi_input
+    to: 'HDMI 2'
+  action:
+    service: script.turn_on
+    entity_id: script.hdmi2
+
+- alias: "HDMI 3"
+  trigger:
+    platform: state
+    entity_id: input_select.hdmi_input
+    to: 'HDMI 3'
+  action:
+    service: script.turn_on
+    entity_id: script.hdmi3
+
+- alias: "HDMI 4"
+  trigger:
+    platform: state
+    entity_id: input_select.hdmi_input
+    to: 'HDMI 4'
+  action:
+    service: script.turn_on
+    entity_id: script.hdmi4
