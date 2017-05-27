@@ -1,41 +1,43 @@
 ### Tabs
 
-wohnzimmer_view:
-  view: true
-  name: Wohnzimmer
-  entities:
-  - group.wohnzimmer_lights
-  - group.remote
+#wohnzimmer_tab:
+#  view: true
+#  name: Wohnzimmer
+#  entities:
+#  - group.wohnzimmer_card
+#  - group.remote
+#
+#flur_tab:
+#  view: true
+#  name: Flur
+#  entities:
+#  - group.flur_card
+#
+#kinderzimmer_tab:
+#  view: true
+#  name: Kinderzimmer
+#  entities:
+#  - group.kinderzimmer_card
+#
+#schlafzimmer_tab:
+#  view: true
+#  name: Schlafzimmer
+#  entities:
+#  - group.schlafzimmer_card
 
-flur_view:
+default_view:
+# room_tab:
+  name: Light
   view: true
-  name: Flur
   entities:
-  - group.flur_lights
+  - group.wohnung_card
+  - group.sensor_card
+  - group.wohnzimmer_card
+  - group.flur_card
+  - group.kinderzimmer_card
+  - group.schlafzimmer_card
 
-kinderzimmer_view:
-  view: true
-  name: Kinderzimmer
-  entities:
-  - group.kinderzimmer_lights
-
-schlafzimmer_view:
-  view: true
-  name: Schlafzimmer
-  entities:
-  - group.schlafzimmer_lights
-
-lichter_view:
-  view: true
-  name: Lichter
-  entities:
-  - group.wohnung_lights
-  - group.wohnzimmer_lights
-  - group.flur_lights
-  - group.kinderzimmer_lights
-  - group.schlafzimmer_lights
-
-media_view:
+media_tab:
   name: Remote
   view: true
   # icon: mdi:remote
@@ -43,54 +45,61 @@ media_view:
   - group.remote
   - group.cast
 
-rasppi_view:
-  name: Raspberry
+server_tab:
+  name: Server
   view: true
   entities:
   - group.rasppi
+  - group.sabnzbd
 
-weather_view:
+weather_tab:
+  name: Weather
   view: true
-  name: Wetter
   entities:
   - group.weather
 
-person_view:
+person_tab:
+  name: People
   view: true
-  name: Personen
   entities:
     - group.stephan
     - group.mona
 
 ### Cards
 
-wohnung_lights:
+wohnung_card:
   name: Wohnung
   entities:
   - light.hgrp0000002046
+
+sensor_card:
+  name: Sensoren
+  entities:
+  - sensor.tur
+  - sensor.flur
   
-wohnzimmer_lights:
-  name: Wohnzimmerlicht
+wohnzimmer_card:
+  name: Wohnzimmer
   entities:
   - light.deckenlampe
   - light.schreibtisch
   - light.stern
   - light.stehlampe
 
-flur_lights:
-  name: Flurlicht
+flur_card:
+  name: Flur
   entities:
   - light.flur_hinten
   - light.flur_vorne
 
-kinderzimmer_lights:
-  name: Kinderzimmerlicht
+kinderzimmer_card:
+  name: Kinderzimmer
   entities:
   - light.kinderlampe
   - light.regenbogen
 
-schlafzimmer_lights:
-  name: Schlafzimmerlicht
+schlafzimmer_card:
+  name: Schlafzimmer
   entities:
   - light.schlafzimmerlampe
   - light.schalter
@@ -104,19 +113,31 @@ remote:
   - input_select.hdmi_input
   - script.mute
   - input_slider.harmonyvolume
+  - media_player.cast_remote
   
 cast:
   name: Cast
   entities:  
-  - media_player.cast_remote
+  # - media_player.cast_remote
 
 rasppi:
-  name: Raspberry
+  name: SickPi
   entities:
+  - sensor.cpu_temp
   - sensor.cpu_use
-  - sensor.ram_free
   - sensor.ram_use
-  - sensor.since_last_boot
+  - sensor.disk_use_
+  - sensor.sabnzbd_disk_free
+  - sensor.sabnzbd_disk
+  - sensor.since_last_boot_templated
+
+sabnzbd:
+  name: SABnzbd
+  entities:
+  - sensor.sabnzbd_status
+  - sensor.sabnzbd_speed
+  - sensor.sabnzbd_queue
+  - sensor.sabnzbd_left
   
 weather:
   name: Wetter
@@ -150,3 +171,8 @@ mona:
   - device_tracker.iphone5_mona
   - sensor.mona_zur_arbeit
   - sensor.mona_nach_hause
+
+empty:
+  name: Empty
+  entities:
+  - sensor.since_last_boot

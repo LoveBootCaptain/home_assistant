@@ -4,12 +4,38 @@
       value_template: '{{ states.remote.harmony_tv.attributes.current_activity }}'
       friendly_name: 'Harmony Hub'
 
+- platform: command_line
+  name: CPU Temp
+  command: "/bin/cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "ºC"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
 - platform: systemmonitor
   resources:
-    - type: memory_free
-    - type: memory_use_percent
     - type: processor_use
+    - type: memory_use_percent
     - type: since_last_boot
+    - type: disk_use_percent
+      arg: /
+
+- platform: template
+  sensors:
+    since_last_boot_templated:
+      value_template: >-
+        {% if states.sensor.since_last_boot.state.count("day") > 0 %}
+        {{states.sensor.since_last_boot.state.split(",") [0] +
+        "," +
+        states.sensor.since_last_boot.state.split(",") [1].split(":") [0] +
+        " hours, " +
+        states.sensor.since_last_boot.state.split(",") [1].split(":") [1] +
+        " minutes" }}
+        {% else %}
+        {{ "0 days, " +
+        states.sensor.since_last_boot.state.split(",") [0].split(":") [0] +
+        " hours, " +
+        states.sensor.since_last_boot.state.split(",") [0].split(":") [1] +
+        " minutes" }}
+        {% endif %}
     
 - platform: yr
   monitored_conditions:
@@ -65,4 +91,28 @@
   unit_of_measurement: "%"
   value_template: '{{ value_json.batt }}'
 
+
+- platform: sabnzbd
+  host: !secret sab_host
+  port: !secret sab_port
+  api_key: !secret sab_api_key
+  monitored_variables:
+    - 'current_status'
+    - 'speed'
+    - 'queue_size'
+    - 'queue_remaining'
+    - 'disk_size'
+    - 'disk_free'
+
+- platform: rest
+  resource: !secret temp_tur
+  value_template: '{{ value_json.state.temperature | float / 100 }}'
+  unit_of_measurement: °C
+  name: 'Tür'
+
+- platform: rest
+  resource: !secret temp_flur
+  value_template: '{{ value_json.state.temperature | float / 100 }}'
+  unit_of_measurement: °C
+  name: 'Flur'
 

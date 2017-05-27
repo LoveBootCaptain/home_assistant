@@ -54,3 +54,38 @@
 
       script.mute:
         icon: mdi:volume-off
+
+      sensor.sabnzbd_speed:
+        icon: mdi:speedometer
+
+      sensor.sabnzbd_disk:
+        icon: mdi:sd
+        friendly_name: Disk Space
+
+      sensor.sabnzbd_disk_free:
+        icon: mdi:harddisk
+        friendly_name: Disk Free
+
+      sensor.sabnzbd_left:
+        icon: mdi:download
+
+      sensor.sabnzbd_queue:
+        icon: mdi:zip-box
+
+      sensor.cpu_temp:
+        icon: mdi:thermometer
+
+      sensor.ram_free:
+        icon: mdi:chip
+
+      sensor.ram_use:
+        icon: mdi:chip
+
+      sensor.since_last_boot_templated:
+        icon: mdi:clock
+        friendly_name: Uptime
+
+      sensor.disk_use_:
+        icon: mdi:harddisk
+        friendly_name: Disk Use
+
