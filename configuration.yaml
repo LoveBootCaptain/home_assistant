@@ -77,7 +77,7 @@ media_player:
     name: Cast Remote
     children:
       - media_player.kodi
-      - media_player.shieldtv
+      - media_player.shieldtv       # this is the plex media player
       - media_player.ambilight_tv
       - media_player.shield
 
