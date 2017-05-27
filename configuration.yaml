@@ -69,10 +69,10 @@ media_player:
     turn_off_action: quit
   - platform: cast
     name: ShieldTV
-    host: 192.168.178.67
+    host: !secret shield_tv
   - platform: cast
     name: Ambilight TV
-    host: 192.168.178.27
+    host: !secret ambilight_tv
   - platform: universal
     name: Cast Remote
     children:
@@ -80,6 +80,7 @@ media_player:
       - media_player.shieldtv
       - media_player.ambilight_tv
       - media_player.shield
+
 remote:
   - platform: harmony
     name: Harmony TV
