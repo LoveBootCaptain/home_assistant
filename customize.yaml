@@ -89,3 +89,6 @@
         icon: mdi:harddisk
         friendly_name: Disk Use
 
+      sensor.eta_stephan:
+        icon: mdi:clock
+

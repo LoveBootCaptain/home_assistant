@@ -25,8 +25,8 @@
 #  entities:
 #  - group.schlafzimmer_card
 
-default_view:
-# room_tab:
+# default_view:
+room_tab:
   name: Light
   view: true
   entities:
@@ -77,7 +77,7 @@ sensor_card:
   entities:
   - sensor.tur
   - sensor.flur
-  
+
 wohnzimmer_card:
   name: Wohnzimmer
   entities:
@@ -114,10 +114,10 @@ remote:
   - script.mute
   - input_slider.harmonyvolume
   - media_player.cast_remote
-  
+
 cast:
   name: Cast
-  entities:  
+  entities:
   # - media_player.cast_remote
 
 rasppi:
@@ -138,7 +138,7 @@ sabnzbd:
   - sensor.sabnzbd_speed
   - sensor.sabnzbd_queue
   - sensor.sabnzbd_left
-  
+
 weather:
   name: Wetter
   entities:
@@ -162,6 +162,7 @@ stephan:
   entities:
   - device_tracker.phone_phone
   - sensor.stephans_phone_battery
+  - sensor.eta_stephan
   - sensor.stephan_zur_arbeit
   - sensor.stephan_nach_hause
 

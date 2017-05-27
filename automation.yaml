@@ -10,7 +10,7 @@
     entity_id: input_select.harmony_tv
     data:
       option: "Fernsehen"
-  
+
 - alias: "Streaming started from Harmony Hub"
   trigger:
     platform: state
@@ -23,7 +23,7 @@
     entity_id: input_select.harmony_tv
     data:
       option: "Streaming"
-      
+
 - alias: "Switch started from Harmony Hub"
   trigger:
     platform: state
@@ -36,7 +36,7 @@
     entity_id: input_select.harmony_tv
     data:
       option: "Switch"
-      
+
 - alias: "Xbox 360 started from Harmony Hub"
   trigger:
     platform: state
@@ -75,7 +75,7 @@
     entity_id: input_select.harmony_tv
     data:
       option: "Powered Off"
-      
+
 #####
 
 
@@ -96,7 +96,7 @@
   action:
     service: script.turn_on
     entity_id: script.streaming
-    
+
 - alias: "Switch started from HASS"
   trigger:
     platform: state
@@ -105,7 +105,7 @@
   action:
     service: script.turn_on
     entity_id: script.switch
-    
+
 - alias: "Xbox 360 started from HASS"
   trigger:
     platform: state

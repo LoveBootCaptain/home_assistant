@@ -36,7 +36,7 @@
         states.sensor.since_last_boot.state.split(",") [0].split(":") [1] +
         " minutes" }}
         {% endif %}
-    
+
 - platform: yr
   monitored_conditions:
       - temperature
@@ -81,6 +81,14 @@
   name: Stephan nach Hause
   api_key: !secret google_api_key
   origin: zone.work_stephan
+  destination: zone.home
+  options:
+    mode: transit
+
+- platform: google_travel_time
+  name: ETA Stephan
+  api_key: !secret google_api_key
+  origin: device_tracker.phone_phone
   destination: zone.home
   options:
     mode: transit
