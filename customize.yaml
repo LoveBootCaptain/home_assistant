@@ -6,6 +6,9 @@
       sensor.yr_symbol:
         friendly_name: Icon
 
+      camera.mjpeg_camera:
+        firendly_name: SickPiCam
+
       light.hgrp0000002046:
         friendly_name: Wohnung
         icon: mdi:home-variant
@@ -92,3 +95,50 @@
       sensor.eta_stephan:
         icon: mdi:clock
 
+      sensor.temp_balkon:
+        friendly_name: Temperatur
+
+      sensor.hum_balkon:
+        icon: mdi:water-percent
+        friendly_name: Luftfeuchtigkeit
+
+      sensor.pres_balkon:
+        icon: mdi:speedometer
+        friendly_name: Luftdruck
+
+      sensor.temp_wohnzimmer:
+        friendly_name: Temperatur
+
+      sensor.hum_wohnzimmer:
+        icon: mdi:water-percent
+        friendly_name: Luftfeuchtigkeit
+
+      sensor.pres_wohnzimmer:
+        icon: mdi:speedometer
+        friendly_name: Luftdruck
+
+      sensor.lux_eingang:
+        icon: mdi:white-balance-sunny
+        friendly_name: Lichtstärke
+
+      binary_sensor.mot_eingang:
+        friendly_name: Bewegung
+
+      sensor.bat_eingang:
+        icon: mdi:battery
+        friendly_name: Batterie
+
+      binary_sensor.mot_flur:
+        friendly_name: Bewegung
+
+      sensor.lux_flur:
+        icon: mdi:white-balance-sunny
+        friendly_name: Lichtstärke
+
+      sensor.bat_flur:
+        icon: mdi:battery
+        friendly_name: Batterie
+
+      sensor.bat_dimmer:
+        icon: mdi:battery
+        friendly_name: Batterie

@@ -74,7 +74,7 @@
     service: input_select.select_option
     entity_id: input_select.harmony_tv
     data:
-      option: "Powered Off"
+      option: "Power Off"
 
 #####
 
@@ -128,7 +128,7 @@
   trigger:
     platform: state
     entity_id: input_select.harmony_tv
-    to: 'Powered Off'
+    to: 'Power Off'
   action:
     service: script.turn_on
     entity_id: script.tvoff

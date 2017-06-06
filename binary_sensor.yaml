@@ -1,0 +1,15 @@
+### Philips Hue Motion Sensor Api
+
+- platform: rest
+  resource: !secret motion_eingang
+  value_template: '{{ value_json.state.presence }}'
+  unit_of_measurement: °C
+  name: 'Mot Eingang'
+  device_class: motion
+
+- platform: rest
+  resource: !secret motion_flur
+  value_template: '{{ value_json.state.presence }}'
+  unit_of_measurement: °C
+  name: 'Mot Flur'
+  device_class: motion

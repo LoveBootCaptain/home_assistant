@@ -11,7 +11,7 @@ harmony_tv:
     - Switch
     - Xbox 360
     - Nintendo Pi
-    - Powered Off
+    - Power Off
   initial: Select Input
   icon: mdi:remote
 

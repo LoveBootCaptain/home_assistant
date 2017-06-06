@@ -1,30 +1,5 @@
 ### Tabs
 
-#wohnzimmer_tab:
-#  view: true
-#  name: Wohnzimmer
-#  entities:
-#  - group.wohnzimmer_card
-#  - group.remote
-#
-#flur_tab:
-#  view: true
-#  name: Flur
-#  entities:
-#  - group.flur_card
-#
-#kinderzimmer_tab:
-#  view: true
-#  name: Kinderzimmer
-#  entities:
-#  - group.kinderzimmer_card
-#
-#schlafzimmer_tab:
-#  view: true
-#  name: Schlafzimmer
-#  entities:
-#  - group.schlafzimmer_card
-
 # default_view:
 room_tab:
   name: Light
@@ -36,6 +11,22 @@ room_tab:
   - group.flur_card
   - group.kinderzimmer_card
   - group.schlafzimmer_card
+
+sensor_tab:
+  name: Sensoren
+  view: true
+  entities:
+  - group.sensor_balkon_card
+  - group.sensor_eingang_card
+  - group.sensor_flur_card
+  - group.sensor_dimmer_card
+  - group.sensor_wohnzimmer_card
+
+camera_tab:
+  name: Camera
+  view: true
+  entities:
+  - group.camera_card
 
 media_tab:
   name: Remote
@@ -72,11 +63,45 @@ wohnung_card:
   entities:
   - light.hgrp0000002046
 
-sensor_card:
-  name: Sensoren
+sensor_balkon_card:
+  name: Sensor Balkon
   entities:
-  - sensor.tur
-  - sensor.flur
+  - sensor.temp_balkon
+  - sensor.hum_balkon
+  - sensor.pres_balkon
+
+sensor_wohnzimmer_card:
+  name: Sensor Wohnzimmer
+  entities:
+  - sensor.temp_wohnzimmer
+  - sensor.hum_wohnzimmer
+  - sensor.pres_wohnzimmer
+
+sensor_eingang_card:
+  name: Sensor Eingang
+  entities:
+  - binary_sensor.mot_eingang
+  - sensor.temp_eingang
+  - sensor.lux_eingang
+  - sensor.bat_eingang
+
+sensor_flur_card:
+  name: Sensor Flur
+  entities:
+  - binary_sensor.mot_flur
+  - sensor.temp_flur
+  - sensor.lux_flur
+  - sensor.bat_flur
+
+sensor_dimmer_card:
+  name: Dimmer
+  entities:
+  - sensor.bat_dimmer
+
+camera_card:
+  entities:
+  - camera.mjpeg_camera
+  # - camera.raspberry_pi_camera
 
 wohnzimmer_card:
   name: Wohnzimmer

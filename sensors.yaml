@@ -112,15 +112,86 @@
     - 'disk_size'
     - 'disk_free'
 
+### Philips Hue Motion Sensor
+
 - platform: rest
-  resource: !secret temp_tur
+  resource: !secret temp_eingang
   value_template: '{{ value_json.state.temperature | float / 100 }}'
   unit_of_measurement: °C
-  name: 'Tür'
+  name: 'Temp Eingang'
+
+- platform: rest
+  resource: !secret lux_eingang
+  value_template: '{{ value_json.state.lightlevel }}'
+  unit_of_measurement: Lux
+  name: 'Lux Eingang'
+
+- platform: rest
+  resource: !secret lux_eingang
+  value_template: '{{ value_json.config.battery }}'
+  unit_of_measurement: '%'
+  name: 'Bat Eingang'
 
 - platform: rest
   resource: !secret temp_flur
   value_template: '{{ value_json.state.temperature | float / 100 }}'
   unit_of_measurement: °C
-  name: 'Flur'
+  name: 'Temp Flur'
 
+- platform: rest
+  resource: !secret lux_flur
+  value_template: '{{ value_json.state.lightlevel }}'
+  unit_of_measurement: Lux
+  name: 'Lux Flur'
+
+- platform: rest
+  resource: !secret lux_eingang
+  value_template: '{{ value_json.config.battery }}'
+  unit_of_measurement: '%'
+  name: 'Bat Flur'
+
+### Philips Hue Dimmer Switch
+
+- platform: rest
+  resource: !secret hue_dimmer
+  value_template: '{{ value_json.config.battery }}'
+  unit_of_measurement: '%'
+  name: 'Bat Dimmer'
+
+### WeatherPi API
+
+- platform: rest
+  resource: !secret weatherpi
+  value_template: '{{ value_json.sensor_temp_inside }}'
+  unit_of_measurement: °C
+  name: 'Temp Wohnzimmer'
+
+- platform: rest
+  resource: !secret weatherpi
+  value_template: '{{ value_json.sensor_humidity_inside }}'
+  unit_of_measurement: '%'
+  name: 'Hum Wohnzimmer'
+
+- platform: rest
+  resource: !secret weatherpi
+  value_template: '{{ value_json.sensor_pressure_inside }}'
+  unit_of_measurement: hPa
+  name: 'Pres Wohnzimmer'
+
+- platform: rest
+  resource: !secret weatherpi
+  value_template: '{{ value_json.sensor_temp_outside }}'
+  unit_of_measurement: °C
+  name: 'Temp Balkon'
+
+- platform: rest
+  resource: !secret weatherpi
+  value_template: '{{ value_json.sensor_humidity_outside }}'
+  unit_of_measurement: '%'
+  name: 'Hum Balkon'
+
+- platform: rest
+  resource: !secret weatherpi
+  value_template: '{{ value_json.sensor_pressure_outside }}'
+  unit_of_measurement: hPa
+  name: 'Pres Balkon'
