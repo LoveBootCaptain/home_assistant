@@ -6,15 +6,19 @@
       sensor.yr_symbol:
         friendly_name: Icon
 
-      camera.mjpeg_camera:
-        firendly_name: SickPiCam
+      ### Harmony Remote
+
+      remote.harmony_tv:
+        icon: mdi:television
+
+      script.mute:
+        icon: mdi:volume-off
+
+      ### Hue Lights
 
       light.hgrp0000002046:
         friendly_name: Wohnung
         icon: mdi:home-variant
-
-      remote.harmony_tv:
-        icon: mdi:television
 
       light.regenbogen:
         icon: mdi:lamp
@@ -40,40 +44,19 @@
       light.schalter:
         icon: mdi:power-plug
 
-      sensor.stephans_phone_battery:
-        icon: mdi:battery-charging
 
-      sensor.stephan_zur_arbeit:
-        icon: mdi:subway
-
-      sensor.stephan_nach_hause:
-        icon: mdi:subway
-
-      sensor.mona_zur_arbeit:
-        icon: mdi:car
-
-      sensor.mona_nach_hause:
-        icon: mdi:car
-
-      script.mute:
-        icon: mdi:volume-off
+      ### SABnzbd
 
       sensor.sabnzbd_speed:
         icon: mdi:speedometer
-
-      sensor.sabnzbd_disk:
-        icon: mdi:sd
-        friendly_name: Disk Space
-
-      sensor.sabnzbd_disk_free:
-        icon: mdi:harddisk
-        friendly_name: Disk Free
 
       sensor.sabnzbd_left:
         icon: mdi:download
 
       sensor.sabnzbd_queue:
         icon: mdi:zip-box
+
+      ### SickPi
 
       sensor.cpu_temp:
         icon: mdi:thermometer
@@ -92,8 +75,45 @@
         icon: mdi:harddisk
         friendly_name: Disk Use
 
+      sensor.sabnzbd_disk:
+        icon: mdi:sd
+        friendly_name: Disk Space
+
+      sensor.sabnzbd_disk_free:
+        icon: mdi:harddisk
+        friendly_name: Disk Free
+
+      ### FileServer
+
+      sensor.cpu_load_total:
+        icon: mdi:memory
+
+      sensor.memory_usage_real:
+        icon: mdi:chip
+
+      ### People Stephan
+
+      sensor.stephans_phone_battery:
+        icon: mdi:battery-charging
+
+      sensor.stephan_zur_arbeit:
+        icon: mdi:subway
+
+      sensor.stephan_nach_hause:
+        icon: mdi:subway
+
       sensor.eta_stephan:
         icon: mdi:clock
+
+      ### People Mona
+
+      sensor.mona_zur_arbeit:
+        icon: mdi:car
+
+      sensor.mona_nach_hause:
+        icon: mdi:car
+
+      ### ESP8266 Balkon
 
       sensor.temp_balkon:
         friendly_name: Temperatur
@@ -106,6 +126,8 @@
         icon: mdi:speedometer
         friendly_name: Luftdruck
 
+      ### ESP8266 Wohnzimmer
+
       sensor.temp_wohnzimmer:
         friendly_name: Temperatur
 
@@ -116,6 +138,8 @@
       sensor.pres_wohnzimmer:
         icon: mdi:speedometer
         friendly_name: Luftdruck
+
+      ### Hue Motion Sensor Eingang
 
       sensor.lux_eingang:
         icon: mdi:white-balance-sunny
@@ -128,6 +152,8 @@
         icon: mdi:battery
         friendly_name: Batterie
 
+      ### Hue Motion Sensor Flur
+
       binary_sensor.mot_flur:
         friendly_name: Bewegung
 
@@ -138,6 +164,8 @@
       sensor.bat_flur:
         icon: mdi:battery
         friendly_name: Batterie
+
+      ### Hue Dimmer
 
       sensor.bat_dimmer:
         icon: mdi:battery

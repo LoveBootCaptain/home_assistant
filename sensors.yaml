@@ -99,18 +99,33 @@
   unit_of_measurement: "%"
   value_template: '{{ value_json.batt }}'
 
+- platform: synologydsm
+  host: !secret syn_host
+  port: !secret syn_port
+  username: !secret syn_user
+  password: !secret syn_password
+  monitored_conditions:
+    - cpu_total_load
+    - memory_real_usage
+    - network_up
+    - network_down
+
+    - disk_temp
+    - disk_smart_status
+    - volume_percentage_used
 
 - platform: sabnzbd
   host: !secret sab_host
   port: !secret sab_port
   api_key: !secret sab_api_key
+  ssl: true
   monitored_variables:
-    - 'current_status'
-    - 'speed'
-    - 'queue_size'
-    - 'queue_remaining'
-    - 'disk_size'
-    - 'disk_free'
+    - current_status
+    - speed
+    - queue_size
+    - queue_remaining
+    - disk_size
+    - disk_free
 
 ### Philips Hue Motion Sensor
 
