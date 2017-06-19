@@ -118,7 +118,6 @@
   host: !secret sab_host
   port: !secret sab_port
   api_key: !secret sab_api_key
-  ssl: true
   monitored_variables:
     - current_status
     - speed
